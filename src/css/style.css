@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Rubik';
+  src: local('Rubik'), url('../fonts/Rubik-Regular.ttf') format('truetype');
+}
+
+body {
+  justify-content: center;
+  font: 'Rubik'; 
+}
+
+.form-registration {
+  height: 100vh;
+  width: 100%;
+}
+
+.form-registration__block { 
+  padding: 200px 400px 0 750px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-registration__text {
+  width: 100%;
+  justify-content: center;
+  padding: 16px 12px 0 12px;
+  height: 56px;
+  max-width: 240px;
+  margin-right: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-registration__text__input {
+  font-size: 16px;
+  font-weight: 400px;
+  border-style: solid;
+  border-radius: 5%;
+  border-color: rgb(199, 199, 199);
+  margin-right: 40px;
+  margin-bottom: 5px;
+}
+
+.form-registration__item__input:focus {
+  outline: 0;
+}
+
+.form-registration__item__error {
+  color: #ef0f18ff;
+}
+
+#form-registration__button {
+  position: relative;
+  left: 50%;
+  transform: translate(-140%, 0);
+  font: 'Rubik'; 
+  color: #434346;
+  background: rgb(153, 149, 149);
+  padding: 15px 40px;
+  border-radius: 50px;
+  border-color: rgb(100, 95, 95);
+  border-width: -2px;
+  margin: 15px;
+}
+
+#form-registration__button:hover {
+  background-color: rgb(182, 42, 42);
+}
+
+#form-registration__button:focus {
+  outline: 0;
+}
