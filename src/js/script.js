@@ -1,7 +1,26 @@
-import '../css/style.css';
+function isFilled(element) {
+  if (element.length <= 0) {
+    return false;
+  }
+  return true;
+}
 
-function fieldValidationFirstName(element) {
-  let parent = element.parentElement;
+function isNumber(element) {
+  if (element.match(/[0-9]+/) !== null) {
+    return true;
+  }
+  return false;
+}
+
+function isEmail(email) {
+  if (email.match(/^[\w-.]+@[\w-]+.[a-z]{2,4}$/) !== null) {
+    return true;
+  }
+  return false;
+}
+
+function fieldValidationName(element) {
+  const parent = element.parentElement;
 
   let errorString = '';
   if (!isFilled(element.value)) {
@@ -11,15 +30,16 @@ function fieldValidationFirstName(element) {
     errorString = 'Name must not contain numbers';
   }
   if (errorString.length > 0) {
-    element.style['boxShadow'] = 'inset 0 -1px 0 red';
-    parent.lastChild.innerHTML = errorString;
+    element.classList.add('invalid-input');
+    parent.children[1].innerHTML = errorString;
   } else {
-    element.style['boxShadow'] = 'inset 0 -1px 0 rgba(199, 199, 199, 0.3)';
-    parent.lastChild.innerHTML = '';
+    element.classList.remove('invalid-input');
+    parent.children[1].innerHTML = '';
   }
 }
+
 function passwordValidation(password) {
-  let parent = password.parentElement;
+  const parent = password.parentElement;
   let errorString = '';
   if (!isFilled(password.value)) {
     errorString = 'Expected input password';
@@ -27,15 +47,16 @@ function passwordValidation(password) {
     errorString = 'Password must be more than 6 characters';
   }
   if (errorString.length > 0) {
-    password.style['boxShadow'] = 'inset 0 -1px 0 red';
-    parent.lastChild.innerHTML = errorString;
+    password.classList.add('invalid-input');
+    parent.children[1].innerHTML = errorString;
   } else {
-    password.style['boxShadow'] = 'inset 0 -1px 0 rgba(199, 199, 199, 0.3)';
-    parent.lastChild.innerHTML = '';
+    password.classList.remove('invalid-input');
+    parent.children[1].innerHTML = '';
   }
 }
+
 function emailValidation(email) {
-  let parent = email.parentElement;
+  const parent = email.parentElement;
   let errorString = '';
   if (!isFilled(email.value)) {
     errorString = 'Expected input email';
@@ -43,42 +64,26 @@ function emailValidation(email) {
     errorString = 'Incorrect mail format';
   }
   if (errorString.length > 0) {
-    email.style['boxShadow'] = 'inset 0 -1px 0 red';
-    parent.lastChild.innerHTML = errorString;
+    email.classList.add('invalid-input');
+    parent.children[1].innerHTML = errorString;
   } else {
-    email.style['boxShadow'] = 'inset 0 -1px 0 rgba(199, 199, 199, 0.3)';
-    parent.lastChild.innerHTML = '';
+    email.classList.remove('invalid-input');
+    parent.children[1].innerHTML = '';
   }
-}
-function isFilled(element) {
-  if (element.length <= 0) {
-    return false;
-  }
-  return true;
-}
-function isNumber(element) {
-  if (element.match(/[0-9]+/) !== null) {
-    return true;
-  }
-  return false;
-}
-function isEmail(email) {
-  console.log(email);
-  if (email.match(/^[\w-.]+@[\w-]+.[a-z]{2,4}$/) !== null) {
-    return true;
-  }
-  return false;
 }
 
-var registrationButton = document.querySelector('.form-registration__button');
+const registrationButton = document.querySelector('.form-registration-item__button');
 
 registrationButton.onclick = function () {
-  let firstName = document.querySelector('#name-first');
-  let lastName = document.querySelector('#name-second');
-  let email = document.querySelector('#email');
-  let password = document.querySelector('#password');
-  fieldValidationFirstName(firstName);
-  fieldValidationLastName(lastName);
+  const firstName = document.querySelector('#first-name');
+  fieldValidationName(firstName);
+
+  const lastName = document.querySelector('#last-name');
+  fieldValidationName(lastName);
+
+  const email = document.querySelector('#email');
   emailValidation(email);
+
+  const password = document.querySelector('#password');
   passwordValidation(password);
 };

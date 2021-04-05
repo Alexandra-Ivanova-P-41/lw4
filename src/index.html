@@ -5,27 +5,47 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <script src="./js/script.js"></script>
     <div class="form-registration">
-      <div class="form-registration__block">
-        <div class="form-registration__text">
-          <input type="text" id="first-name" class="form-registration__text__input" placeholder="First name" />
-        </div>
-        <div class="form-registration__text">
-          <input type="text" id="last-name" class="form-registration__text__input" placeholder="Last name" />
-          <label class="form-registration__item__error"></label>
-        </div>
-        <div class="form-registration__text">
-          <input type="text" id="email" class="form-registration__text__input" placeholder="Email" />
-          <label class="form-registration__item__error" ></label>
-        </div>
-        <div class="form-registration__text">
-          <input type="text" id="password" class="form-registration__text__input" placeholder="Password" />
-          <label class="form-registration__item__error"></label>
-        </div>
+      <div class="form-registration-item">
+        <input
+          type="text"
+          id="first-name"
+          class="form-registration-item__input"
+          placeholder="First name"
+        />
+        <label class="form-registration-item__error"></label>
       </div>
-        <button id="form-registration__button">Sign Up</button>
+      <div class="form-registration-item">
+        <input
+          type="text"
+          id="last-name"
+          class="form-registration-item__input"
+          placeholder="Last name"
+        />
+        <label class="form-registration-item__error"></label>
+      </div>
+      <div class="form-registration-item">
+        <input 
+          type="text" 
+          id="email" 
+          class="form-registration-item__input" 
+          placeholder="Email" 
+        />
+        <label class="form-registration-item__error"></label>
+      </div>
+      <div class="form-registration-item">
+        <input
+          type="text"
+          id="password"
+          class="form-registration-item__input"
+          placeholder="Password"
+        />
+        <label class="form-registration-item__error"></label>
+      </div>
+      <div class="form-registration-item">
+        <button class="form-registration-item__button">Sign Up</button>
       </div>
     </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>

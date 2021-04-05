@@ -19,7 +19,7 @@ const path = require('path'); // встроенная node.js либа для р
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/index.js', // точка входа
+  entry: './src/index.js', // точка входа
   output: {
     publicPath: '',
     filename: 'app.min.js', // имя файла сборки
